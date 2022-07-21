@@ -86,15 +86,14 @@ commands:
             sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC
             sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/<< parameters.os >>/<< parameters.platform >>/ /"
             sudo apt-get update
-            sudo apt-get install libcudnn8=<< parameters.cudnn-pkg-name >>
-            sudo apt-get install libcudnn8-dev=<< parameters.cudnn-pkg-name >>
+            sudo apt-get install libcudnn8=<< parameters.cudnn-version >>*
+            sudo apt-get install libcudnn8-dev=<< parameters.cudnn-version >>*
 
             sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/<< parameters.os >>/<< parameters.platform >>/3bf863cc.pub
             sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/<< parameters.os >>/<< parameters.platform >>/ /"
             sudo apt-get update
 
-            sudo apt-get install libnvinfer8=<< parameters.trt-pkg-name >> libnvinfer-plugin8=<< parameters.trt-pkg-name >> libnvinfer-dev=<< parameters.trt-pkg-name >> libnvinfer-plugin-dev=<< parameters.trt-pkg-name >>
-            # check available version, apt list libnvinfer8 -a
+            sudo apt-get install libnvinfer8=<< parameters.trt-version-short >>* libnvinfer-plugin8=<< parameters.trt-version-short>>* libnvinfer-dev=<< parameters.trt-version-short>>* libnvinfer-plugin-dev=<< parameters.trt-version-short>>*
       - install-bazel:
           platform: << parameters.bazel-platform >>
           version: << parameters.bazel-version >>
