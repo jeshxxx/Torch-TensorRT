@@ -58,15 +58,9 @@ commands:
       cudnn-version:
         type: string
         default: "8.2.1"
-      cudnn-pkg-name:
-        type: string
-        default: "8.2.1.*-1+cuda11.3"
       trt-version-short:
         type: string
         default: "8.2.4"
-      trt-pkg-name:
-        type: string
-        default: "8.2.4-1+cuda11.4"
       bazel-version:
         type: string
         default: "5.1.1"
@@ -349,9 +343,7 @@ jobs:
           os: "ubuntu2004"
           platform: "sbsa"
           cudnn-version: << pipeline.parameters.cudnn-jetson-version >>
-          cudnn-pkg-name:  << pipeline.parameters.cudnn-jetson-pkg-name >>
           trt-version-short:  << pipeline.parameters.trt-jetson-version-short >>
-          trt-pkg-name: << pipeline.parameters.trt-jetson-pkg-name >>
           bazel-version: "5.1.1"
           bazel-platform: "arm64"
       - run:
@@ -407,9 +399,7 @@ jobs:
           os: "ubuntu2004"
           platform: "x86_64"
           cudnn-version: << pipeline.parameters.cudnn-release-version >>
-          cudnn-pkg-name:  << pipeline.parameters.cudnn-release-pkg-name >>
           trt-version-short:  << pipeline.parameters.trt-release-version-short >>
-          trt-pkg-name: << pipeline.parameters.trt-release-pkg-name >>
           bazel-version: "5.1.1"
           bazel-platform: "x86_64"
       - install-torch-from-index:
@@ -454,9 +444,7 @@ jobs:
           os: "ubuntu2004"
           platform: "x86_64"
           cudnn-version: << pipeline.parameters.cudnn-nightly-version >>
-          cudnn-pkg-name:  << pipeline.parameters.cudnn-nightly-pkg-name >>
           trt-version-short:  << pipeline.parameters.trt-nightly-version-short >>
-          trt-pkg-name: << pipeline.parameters.trt-nightly-pkg-name >>
           bazel-version: "5.1.1"
           bazel-platform: "x86_64"
       - install-torch-from-index:
@@ -499,9 +487,7 @@ jobs:
           os: "ubuntu2004"
           platform: "x86_64"
           cudnn-version: << pipeline.parameters.cudnn-release-version >>
-          cudnn-pkg-name:  << pipeline.parameters.cudnn-release-pkg-name >>
           trt-version-short:  << pipeline.parameters.trt-release-version-short >>
-          trt-pkg-name: << pipeline.parameters.trt-release-pkg-name >>
           bazel-version: "5.1.1"
           bazel-platform: "x86_64"
       - create-py-env:
@@ -577,18 +563,12 @@ parameters:
   cudnn-nightly-version:
     type: string
     default: "8.2.1"
-  cudnn-nightly-pkg-name:
-    type: string
-    default: "8.2.1.*-1+cuda11.4"
   trt-nightly-version-short:
     type: string
     default: "8.2.4"
   trt-nightly-version-long:
     type: string
     default: "8.2.4.2"
-  trt-nightly-pkg-name:
-    type: string
-    default: "8.2.4-1+cuda11.4"
 
   # Release platform config
   torch-release-build:
@@ -600,18 +580,12 @@ parameters:
   cudnn-release-version:
     type: string
     default: "8.2.1"
-  cudnn-release-pkg-name:
-    type: string
-    default: "8.2.1.*-1+cuda11.3"
   trt-release-version-short:
     type: string
     default: "8.2.4"
   trt-release-version-long:
     type: string
     default: "8.2.4.2"
-  trt-release-pkg-name:
-    type: string
-    default: "8.2.4-1+cuda11.4"
 
   # Jetson platform config
   torch-jetson-build:
@@ -623,18 +597,12 @@ parameters:
   cudnn-jetson-version:
     type: string
     default: "8.3.2"
-  cudnn-jetson-pkg-name:
-    type: string
-    default: "8.3.2.*-1+cuda11.5"
   trt-jetson-version-short:
     type: string
-    default: "8.4.0"
+    default: "8.4.1"
   trt-jetson-version-long:
     type: string
-    default: "8.4.0.6"
-  trt-jetson-pkg-name:
-    type: string
-    default: "8.4.0-1+cuda11.6"
+    default: "8.4.1.5"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
