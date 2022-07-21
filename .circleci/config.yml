@@ -332,7 +332,7 @@ jobs:
         type: string
         default: 3.8.13
     machine:
-      image: ubuntu-2004:current
+      image: ubuntu-2004:202201-02
     resource_class: arm.xlarge
     steps:
       - checkout
