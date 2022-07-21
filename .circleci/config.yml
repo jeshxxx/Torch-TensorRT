@@ -577,19 +577,19 @@ parameters:
     default: "https://download.pytorch.org/whl/nightly/cu113"
   cudnn-nightly-version:
     type: string
-    default: "8.4.0"
+    default: "8.2.1"
   cudnn-nightly-pkg-name:
     type: string
-    default: "8.4.0.*-1+cuda11.6"
+    default: "8.2.1.*-1+cuda11.4"
   trt-nightly-version-short:
     type: string
-    default: "8.4.1"
+    default: "8.2.4"
   trt-nightly-version-long:
     type: string
-    default: "8.4.1.5"
+    default: "8.2.4.2"
   trt-nightly-pkg-name:
     type: string
-    default: "8.4.1-1+cuda11.6"
+    default: "8.2.4-1+cuda11.4"
 
   # Release platform config
   torch-release-build:
