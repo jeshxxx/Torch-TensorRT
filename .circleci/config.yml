@@ -336,13 +336,13 @@ jobs:
     resource_class: arm.xlarge
     steps:
       - checkout
-      - run:
-          name: Upgrade base
-          command: |
-            sudo apt clean
-            sudo apt update
-            sudo apt upgrade
-            sudo apt install software-properties-common
+      #- run:
+      #    name: Upgrade base
+      #    command: |
+      #      sudo apt clean
+      #      sudo apt update
+      #      sudo apt upgrade
+      #      sudo apt install software-properties-common
       - install-cuda:
           os: "ubuntu2004"
           platform: "sbsa"
