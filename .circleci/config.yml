@@ -339,6 +339,7 @@ jobs:
       - run:
           name: Upgrade base
           command: |
+            sudo apt clean
             sudo apt update
             sudo apt upgrade
             sudo apt install software-properties-common
